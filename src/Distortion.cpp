@@ -10,7 +10,6 @@ float clamp(float value, float min, float max) {
 
 Distortion::Distortion() 
     : Module((int) Params::COUNT, (int) Inputs::COUNT, (int) Outputs::COUNT, (int) Lights::COUNT)
-    , _debugOut("debug.out")
 {}
 
 void Distortion::step() {
@@ -24,8 +23,8 @@ void Distortion::step() {
     outputs[(int) Outputs::SIGNAL].value = math::clamp(input, low_value, high_value);
 }
 
-struct MyModuleWidget : ModuleWidget {
-	MyModuleWidget(Distortion *module) : ModuleWidget(module) {
+struct DistortionWidget : ModuleWidget {
+	DistortionWidget(Distortion *module) : ModuleWidget(module) {
 		setPanel(SVG::load(assetPlugin(plugin, "res/Distortion.svg")));
 
 		addChild(Widget::create<ScrewBlack>(Vec(RACK_GRID_WIDTH, 0)));
@@ -51,4 +50,4 @@ struct MyModuleWidget : ModuleWidget {
 // author name for categorization per plugin, module slug (should never
 // change), human-readable module name, and any number of tags
 // (found in `include/tags.hpp`) separated by commas.
-Model *modelMyModule = Model::create<Distortion, MyModuleWidget>("MicMusic", "Distortion", "Distortion - CuTeR", DISTORTION_TAG);
+Model *distortionModule = Model::create<Distortion, DistortionWidget>("MicMusic", "Distortion", "Distortion - CuTeR", DISTORTION_TAG);

@@ -2,8 +2,6 @@
 
 #include "MicMusic.hpp"
 
-#include <fstream>
-
 class Distortion : public Module {
 public:
     enum class Params {
@@ -33,9 +31,6 @@ public:
     Distortion();
 
     void step() override;
-
-private:
-    std::ofstream _debugOut;
 };
 
 
