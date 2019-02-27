@@ -4,6 +4,7 @@
 ## Distortion "CuTeR"
 It cuts all waveshape above HIGH and below LOW levels.
 
+```
 _____________________________________________________ HIGH
        /     \             /     \             /   
       /       \           /       \           /    
@@ -13,6 +14,7 @@ _____________________________________________________ HIGH
   /               \   /               \   /        
  /                 \ /                 \ /            LOW
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾   
+```
 Pic. 1 CuTeR functionality
 
 HIGH and LOW levels are controlled with corresponding knobs.
