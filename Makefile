@@ -19,7 +19,7 @@ CXXFLAGS += -Wall -O3
 LDFLAGS +=
 
 # Add .cpp and .c files to the build
-SOURCES += src/Distortion.cpp src/MicMusic.cpp 
+SOURCES += src/AutoTune.cpp src/Distortion.cpp src/MicMusic.cpp 
 
 # Add files to the ZIP package when running `make dist`
 # The compiled plugin is automatically added.

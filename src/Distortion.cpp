@@ -19,7 +19,6 @@ void Distortion::step() {
     float low_cv = inputs[(int) Inputs::LOW].value * params[(int) Params::LOW_CV].value;
     float low_value = params[(int) Params::LOW].value + low_cv;
 	
-    //_debugOut << params[(int) Inputs::HIGH].value;
     outputs[(int) Outputs::SIGNAL].value = math::clamp(input, low_value, high_value);
 }
 
