@@ -35,6 +35,7 @@ public:
     };
 
     enum class Lights {
+        MUTE,
         COUNT
     };
 
