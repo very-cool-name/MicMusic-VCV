@@ -1,0 +1,50 @@
+#pragma once
+
+#include "MicMusic.hpp"
+
+class Adder : public Module {
+public:
+    enum class Params {
+        A_AMP,
+        B_AMP,
+        C_AMP,
+        D_AMP,
+        E_AMP,
+        F_AMP,
+        G_AMP,
+        A_SIGN,
+        B_SIGN,
+        C_SIGN,
+        D_SIGN,
+        E_SIGN,
+        F_SIGN,
+        G_SIGN,
+        MUTE,
+        COUNT
+    };
+
+    enum class Inputs {
+        A,
+        B,
+        C,
+        D,
+        E,
+        F,
+        G,
+        COUNT
+    };
+
+    enum class Lights {
+        MUTE,
+        COUNT
+    };
+
+    enum class Outputs {
+        SIGNAL,
+        COUNT
+    };
+    
+    Adder();
+
+    void step() override;
+};
