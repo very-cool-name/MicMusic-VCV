@@ -28,4 +28,4 @@ Adds values from seven channels.
 If no input is connected - channel outputs constant voltage. Zero by default, knob regulates it up to 2.
 If input is connected - knob regulates input volume. Switch regulates sign of addition.
 Bottom switch is mute for all channels.
-Based on [A-185-2 Precision CV Adder](http://www.doepfer.de/a1852.htm)
+Based on [A-185-2 Precision CV Adder](http://www.doepfer.de/a1852.htm).
