@@ -7,6 +7,7 @@ Adder::Adder()
 void Adder::step() {
     float& output = outputs[(int) Outputs::SIGNAL].value;
     output = 0;
+    lights[(int) Lights::MUTE].value = params[(int) Params::MUTE].value;
     if (params[(int) Params::MUTE].value < 1)
         return;
     const int inputs_count = (int) Inputs::COUNT;
@@ -37,6 +38,7 @@ struct AdderWidget : ModuleWidget {
 
         addParam(ParamWidget::create<CKSS>(Vec(34, 346), module, (int) Adder::Params::MUTE, 0.f, 1.f, 1.f));
 		addOutput(Port::create<PJ301MPort>(Vec(57, 344), Port::OUTPUT, module,(int)  Adder::Outputs::SIGNAL));
+        addChild(ModuleLightWidget::create<SmallLight<RedLight>>(Vec(16, 352), module, (int) Adder::Lights::MUTE));
 	}
 };
 
