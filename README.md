@@ -23,3 +23,8 @@ CV knobs vary amount of modulation.
 
 ## Adder "SeVen"
 ![](https://github.com/very-cool-name/MicMusic-VCV/blob/adder_seven/doc/seven_layout.png)
+
+Adds values from seven channels.
+If no input is connected - channel outputs constant voltage. Zero by default, knob regulates it up to 2.
+If input is connected - knob regulates input volume. Switch regulates sign of addition.
+Bottom switch is mute for all channels.
