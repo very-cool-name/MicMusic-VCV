@@ -3,6 +3,7 @@
 
 ## Distortion "CuTeR"
 ![](https://github.com/very-cool-name/MicMusic-VCV/blob/master/doc/cuter_layout.png)
+
 It cuts all waveshape above HIGH and below LOW levels.
 
 ```
