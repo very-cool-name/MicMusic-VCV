@@ -19,6 +19,13 @@ public:
         E_SIGN,
         F_SIGN,
         G_SIGN,
+        A_MUTE,
+        B_MUTE,
+        C_MUTE,
+        D_MUTE,
+        E_MUTE,
+        F_MUTE,
+        G_MUTE,
         MUTE,
         COUNT
     };
@@ -35,7 +42,6 @@ public:
     };
 
     enum class Lights {
-        MUTE,
         COUNT
     };
 
