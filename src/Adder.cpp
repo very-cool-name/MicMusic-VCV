@@ -8,7 +8,7 @@ Adder::Adder()
 void Adder::step() {
     float& output = outputs[(int) Outputs::SIGNAL].value;
     output = 0;
-    if (params[(int) Params::MUTE].value < 1)
+    if (params[(int) Params::MUTE].value > 0)
         return;
     const int inputs_count = (int) Inputs::COUNT;
     for (int i = 0; i < inputs_count; ++i) {
