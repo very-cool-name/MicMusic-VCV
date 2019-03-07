@@ -2,7 +2,7 @@
 # VCV Rack MicMusic plugins
 
 ## Distortion "CuTeR"
-![](https://github.com/very-cool-name/MicMusic-VCV/blob/adder_seven/doc/cuter_layout.png)
+![](https://github.com/very-cool-name/MicMusic-VCV/blob/master/doc/cuter_layout.png)
 It cuts all waveshape above HIGH and below LOW levels.
 
 ```
@@ -23,7 +23,7 @@ Also CV inputs are available to modulate HIGH and LOW levels.
 CV knobs vary amount of modulation.
 
 ## Adder "SeVen"
-![](https://github.com/very-cool-name/MicMusic-VCV/blob/adder_seven/doc/seven_layout.png)
+![](https://github.com/very-cool-name/MicMusic-VCV/blob/master/doc/seven_layout.png)
 
 Adds values from seven channels.
 If no input is connected - channel outputs constant voltage. Zero by default, knob regulates it up to 1.
