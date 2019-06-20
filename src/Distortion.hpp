@@ -2,7 +2,7 @@
 
 #include "MicMusic.hpp"
 
-class Distortion : public Module {
+class Distortion : public rack::Module {
 public:
     enum class Params {
         HIGH,

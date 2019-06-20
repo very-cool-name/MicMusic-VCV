@@ -2,6 +2,6 @@
 
 #include "MicMusic.hpp"
 
-struct LedToggle : SVGSwitch, ToggleSwitch {
+struct LedToggle : rack::SvgSwitch {
     LedToggle();
 };

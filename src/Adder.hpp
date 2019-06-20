@@ -2,7 +2,7 @@
 
 #include "MicMusic.hpp"
 
-class Adder : public Module {
+class Adder : public rack::Module {
 public:
     enum class Params {
         A_AMP,

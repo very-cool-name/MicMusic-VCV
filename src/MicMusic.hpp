@@ -1,11 +1,9 @@
-#include "rack.hpp"
+#include "rack0.hpp"
 
-
-using namespace rack;
 
 // Forward-declare the Plugin, defined in Template.cpp
-extern Plugin *plugin;
+extern rack::Plugin *pluginInstance;
 
 // Forward-declare each Model, defined in each module source file
-extern Model *distortionModule;
-extern Model *adderModule;
+extern rack::Model *distortionModule;
+extern rack::Model *adderModule;

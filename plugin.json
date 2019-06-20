@@ -14,15 +14,15 @@
   "modules": [
     {
       "slug": "Seven",
-      "name": "SeVen",
+      "name": "SeVeN",
       "description": "Adds +-1V signals",
       "tags": [
         "Utility"
       ]
     },
     {
-      "slug": "Cutter",
-      "name": "CutTer",
+      "slug": "Cuter",
+      "name": "CuTeR",
       "description": "Simple distortion - cuts signal between levels",
       "tags": [
         "Distortion"
