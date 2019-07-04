@@ -1,4 +1,4 @@
-#include "rack0.hpp"
+#include "rack.hpp"
 
 
 // Forward-declare the Plugin, defined in Template.cpp

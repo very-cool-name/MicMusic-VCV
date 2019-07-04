@@ -30,7 +30,7 @@ public:
     
     Distortion();
 
-    void step() override;
+    void process(const ProcessArgs &args) override;
 };
 
 

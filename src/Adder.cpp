@@ -3,25 +3,31 @@
 
 using namespace rack;
 
-Adder::Adder() 
-    : Module((int) Params::COUNT, (int) Inputs::COUNT, (int) Outputs::COUNT, (int) Lights::COUNT)
-{}
+Adder::Adder() {
+    config((int) Params::COUNT, (int) Inputs::COUNT, (int) Outputs::COUNT, (int) Lights::COUNT);
+    for (int i = 0; i < (int) Adder::Inputs::COUNT; ++i) {
+        configParam(i, 0.f, 1.f, 1.f);
+        configParam(static_cast<int>(Adder::Inputs::COUNT) + i, 0.f, 1.f, 1.f);
+        configParam(2 * static_cast<int>(Adder::Inputs::COUNT) + i, 0.f, 1.f, 1.f);
+    }
+    configParam((int) Adder::Params::MUTE, 0.f, 1.f, 1.f);
+}
 
-void Adder::step() {
+void Adder::process(const ProcessArgs &args) {
     float& output = outputs[(int) Outputs::SIGNAL].value;
     output = 0;
-    if (params[(int) Params::MUTE].value > 0)
+    if (params[(int) Params::MUTE].getValue() > 0)
         return;
     const int inputs_count = (int) Inputs::COUNT;
     for (int i = 0; i < inputs_count; ++i) {
-        const bool mute = params[i + inputs_count * 2].value > 0;
+        const bool mute = params[i + inputs_count * 2].getValue() > 0;
         if (mute)
             continue;
-        int sign = (params[i + inputs_count].value > 0) ? 1 : -1;
-        if (inputs[i].active) {
-            output += inputs[i].value * params[i].value * sign;
+        int sign = (params[i + inputs_count].getValue() > 0) ? 1 : -1;
+        if (inputs[i].isConnected()) {
+            output += inputs[i].getVoltage() * params[i].getValue() * sign;
         } else {
-            output += params[i].value * sign;
+            output += params[i].getValue() * sign;
         }
     }
 }
@@ -37,14 +43,14 @@ struct AdderWidget : ModuleWidget {
 		addChild(createWidget<ScrewBlack>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 
         for (int i = 0; i < (int) Adder::Inputs::COUNT; ++i) {
-            addInput(createPort<PJ301MPort>(Vec(6, 50 + i * 43), PortWidget::INPUT, module, i));
-            addParam(createParam<RoundBlackKnob>(Vec(42, 46 + i * 43), module, i, 0.f, 1.f, 1.f));
-            addParam(createParam<CKSS>(Vec(87, 53 + i * 43), module, static_cast<int>(Adder::Inputs::COUNT) + i, 0.f, 1.f, 1.f));
-            addParam(createParam<LedToggle>(Vec(106, 58 + i * 43), module, 2 * static_cast<int>(Adder::Inputs::COUNT) + i, 0.f, 1.f, 1.f));
+            addInput(createInput<PJ301MPort>(Vec(7, 49 + i * 43), module, i));
+            addParam(createParam<RoundBlackKnob>(Vec(42, 46 + i * 43), module, i));
+            addParam(createParam<CKSS>(Vec(87, 53 + i * 43), module, static_cast<int>(Adder::Inputs::COUNT) + i));
+            addParam(createParam<LedToggle>(Vec(106, 58 + i * 43), module, 2 * static_cast<int>(Adder::Inputs::COUNT) + i));
         }
 
-        addParam(createParam<LedToggle>(Vec(38, 351), module, (int) Adder::Params::MUTE, 0.f, 1.f, 1.f));
-		addOutput(createPort<PJ301MPort>(Vec(57, 344), PortWidget::OUTPUT, module,(int)  Adder::Outputs::SIGNAL));
+        addParam(createParam<LedToggle>(Vec(38, 351), module, (int) Adder::Params::MUTE));
+		addOutput(createOutput<PJ301MPort>(Vec(58, 344), module,(int)  Adder::Outputs::SIGNAL));
 	}
 };
 
