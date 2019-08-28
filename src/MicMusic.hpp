@@ -7,3 +7,4 @@ extern rack::Plugin *pluginInstance;
 // Forward-declare each Model, defined in each module source file
 extern rack::Model *distortionModule;
 extern rack::Model *adderModule;
+extern rack::Model *delayModule;

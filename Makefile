@@ -11,7 +11,7 @@ CXXFLAGS += -Wall -O3
 LDFLAGS +=
 
 # Add .cpp and .c files to the build
-SOURCES += src/LedToggle.cpp src/Adder.cpp src/Distortion.cpp src/MicMusic.cpp 
+SOURCES += src/Delay.cpp src/LedToggle.cpp src/Adder.cpp src/Distortion.cpp src/MicMusic.cpp 
 
 # Add files to the ZIP package when running `make dist`
 # The compiled plugin is automatically added.

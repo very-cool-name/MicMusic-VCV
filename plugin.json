@@ -27,6 +27,14 @@
       "tags": [
         "Distortion"
       ]
+    },
+    {
+      "slug": "Delay",
+      "name": "Delay",
+      "description": "Delay",
+      "tags": [
+        "Delay"
+      ]
     }
   ]
 }
