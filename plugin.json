@@ -27,6 +27,14 @@
       "tags": [
         "Distortion"
       ]
+    },
+    {
+      "slug": "DrumMachine",
+      "name": "DrumMachine",
+      "description": "Drum machine",
+      "tags": [
+        "Distortion"
+      ]
     }
   ]
 }
